@@ -187,8 +187,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92c07a9816948ff469cf23d1fe6a3037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spawnManager: {fileID: 831955106}
   numbOfTargets: 0
-  endScreen: {fileID: 0}
+  endScreen: {fileID: 1627242648}
 --- !u!4 &244956635
 Transform:
   m_ObjectHideFlags: 0
@@ -419,8 +420,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 1000
   jumpForce: 500
-  focalPoint: {fileID: 1572279972}
   onGround: 0
+  _rigidbody: {fileID: 357418382}
+  focalPoint: {fileID: 1572279972}
+  _animator: {fileID: 357418384}
 --- !u!54 &357418382
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -450,6 +453,11 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.3676688, y: 0.50480145, z: 0.36820748}
   m_Center: {x: 0, y: 0.24759921, z: 0.0298803}
+--- !u!95 &357418384 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2686890238588325744, guid: 7856c197eb4c77840878eba92e1c48b7, type: 3}
+  m_PrefabInstance: {fileID: 834233418}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,8 +832,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a853c16812659419ece50108d163f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cameraControll: {fileID: 0}
-  _playerController: {fileID: 0}
+  _cameraControll: {fileID: 1572279973}
+  _playerController: {fileID: 357418381}
+  _camera: {fileID: 1495584605}
   inactivity: 0
   timer: 0
 --- !u!81 &1495584604

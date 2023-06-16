@@ -5,22 +5,18 @@ public class PlayerController : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float movementSpeed;
     [SerializeField] private float jumpForce;
-
-    private float verticalInput;
-    public GameObject focalPoint;
-    private Rigidbody _rigidbody;
-
     [SerializeField] private bool onGround;
 
+    private float verticalInput;
+    [SerializeField] private Rigidbody _rigidbody;
+
+    //Camera
+    [SerializeField] private  GameObject focalPoint;
     //Animacja
-    private Animator _animator;
+    [SerializeField] private Animator _animator;
 
 
-    private void Start()
-    {
-        _rigidbody = GetComponent<Rigidbody>();
-        _animator = GetComponent<Animator>();
-    }
+
 
     private void Update()
     {

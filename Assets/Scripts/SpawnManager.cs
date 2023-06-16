@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject[] prefabs;
+    [SerializeField] GameObject[] prefabs;
     private int prefabsToSpawn = 9;
     private void Start()
     {

@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class Inactivity : MonoBehaviour
 {
+    // For player inactivity
     [SerializeField]private CameraControll _cameraControll;
     [SerializeField]private PlayerController _playerController;
 
-    private Camera _camera;
+    [SerializeField] private Camera _camera;
     private float startFOV;
 
     [SerializeField] private bool inactivity;
@@ -14,13 +15,6 @@ public class Inactivity : MonoBehaviour
 
     private void Start()
     {
-        if (gameObject.name == "Camera_Player1")
-        {
-            _cameraControll = GameObject.Find("Focal_Point_Player1").GetComponent<CameraControll>();
-            _playerController = GameObject.Find("Player1").GetComponent<PlayerController>();
-        }
-
-        _camera = GetComponent<Camera>();
         startFOV = _camera.fieldOfView;
     }
     private void FixedUpdate()
@@ -34,7 +28,7 @@ public class Inactivity : MonoBehaviour
                 _camera.fieldOfView = startFOV;
         }
     }
-    private bool IsPlayerActive()
+    private bool IsPlayerActive() // If player is inactivity, the camera will slowly zoom out 
     {
         if (_cameraControll.HorizontalInput != 0 || _playerController.VerticalInput != 0 || !_playerController.OnGround)
         {

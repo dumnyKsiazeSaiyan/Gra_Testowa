@@ -4,11 +4,11 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    private SpawnManager _spawnManager;
+    [SerializeField] private SpawnManager _spawnManager;
     public int numbOfTargets;
 
     //Restart
-    public TextMeshProUGUI endScreen;
+    [SerializeField] private TextMeshProUGUI endScreen;
     private float timeToRestart = 5.0f;
 
     private void Start()
@@ -16,8 +16,6 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        _spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
-        endScreen = GameObject.Find("Canvas").GetComponentInChildren<TextMeshProUGUI>();
         endScreen.enabled = false;
     }
 
