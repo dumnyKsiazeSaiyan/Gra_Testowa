@@ -3,7 +3,7 @@ using UnityEngine;
 public class CateBlowBehavior : MonoBehaviour
 {
     private float shotPower = 20000;
-    public GameObject completObject;
+    public GameObject completObject; // It is whole prefab
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
@@ -13,5 +13,10 @@ public class CateBlowBehavior : MonoBehaviour
             rb.AddForce(Time.fixedDeltaTime * shotPower * collision.gameObject.transform.up);
             Destroy(completObject);
         }
+    }
+
+    private void OnDestroy()
+    {
+        
     }
 }

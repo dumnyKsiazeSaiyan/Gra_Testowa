@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CrateBounceBehavior : MonoBehaviour
 {
-    public GameObject completObject;
+    public GameObject completObject; // It is whole prefab
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -10,5 +10,10 @@ public class CrateBounceBehavior : MonoBehaviour
         {
             Destroy(completObject);
         }
+    }
+
+    private void OnDestroy()
+    {
+        
     }
 }

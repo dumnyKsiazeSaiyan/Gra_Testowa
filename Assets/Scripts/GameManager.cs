@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
+
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private SpawnManager _spawnManager;
@@ -22,7 +23,9 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         VictoryConditions();
-
+        Input.GetKeyUp(KeyCode.Q);
+        
+            
         if (Input.GetKeyUp(KeyCode.Q))
         {
             Application.Quit();
@@ -31,7 +34,7 @@ public class GameManager : MonoBehaviour
 
     private void VictoryConditions()
     {
-        numbOfTargets = GameObject.FindGameObjectsWithTag("Target").Length;
+        //numbOfTargets = GameObject.FindGameObjectsWithTag("Target").Length;
 
         if (numbOfTargets <= _spawnManager.PrefabsToSpawn - 5)
         {
